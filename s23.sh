@@ -56,9 +56,9 @@ fi
 # Hot wallet setup
 while true; do
     read -p "Enter 1 to create a new hot wallet, 2 to import an existing one, or 3 to use an existing hot wallet: " hot_wallet_choice
-
+	read -p "Enter hotkey name" hot_key_name
     if [ "$hot_wallet_choice" = "1" ]; then
-        NEW_HOTKEY_OUTPUT=$(btcli w new_hotkey --wallet.hotkey default --no_prompt)
+        NEW_HOTKEY_OUTPUT=$(btcli w new_hotkey --wallet.hotkey $hot_key_name --no_prompt)
         echo "$NEW_HOTKEY_OUTPUT" >> Backup
     elif [ "$hot_wallet_choice" = "2" ]; then
         echo "Enter the 12 seed words for the hot wallet:"
