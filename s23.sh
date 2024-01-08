@@ -63,8 +63,17 @@ elif [ "$hot_wallet_choice" = "2" ]; then
     echo "Enter the 12 seed words for the hot wallet:"
     read -p "Word 1: " W13
     read -p "Word 2: " W14
-    # ... (repeat for words 3 to 12)
-
+    read -p "Word 2: " W15
+    read -p "Word 2: " W16
+    read -p "Word 2: " W17
+    read -p "Word 2: " W18
+    read -p "Word 2: " W19
+    read -p "Word 2: " W20
+    read -p "Word 2: " W21
+    read -p "Word 2: " W22
+    read -p "Word 2: " W23
+    read -p "Word 2: " W24
+	    
     MNEMONIC="$W13 $W14 $W15 $W16 $W17 $W18 $W19 $W20 $W21 $W22 $W23 $W24"
     NEW_HOTKEY_OUTPUT=$(echo -e "$MNEMONIC\n" | btcli w regen_hotkey --wallet.hotkey default --no_prompt)
     echo "$NEW_HOTKEY_OUTPUT" >> Backup
